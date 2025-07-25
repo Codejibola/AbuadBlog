@@ -8,7 +8,7 @@ function App() {
     <Router>
       {/* NAVBAR */}
       <nav className="bg-gradient-to-r from-[#2563eb] to-[#3b82f6] px-6 py-4 flex justify-between items-center shadow-md rounded-b-2xl">
-        <h1 className="text-white text-2xl font-bold tracking-wide">📝 AbuadBlog</h1>
+        <h1 className="text-white text-2xl font-bold tracking-wide">AbuadBlog</h1>
         <div className="space-x-6">
           <Link
             to="/"
