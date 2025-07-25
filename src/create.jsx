@@ -33,36 +33,46 @@ export default function CreateBlog() {
   };
 
   return (
-    <div style={{ padding: '20px', maxWidth: '600px', margin: 'auto' }}>
-      <h2>Create New Blog</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="max-w-xl mx-auto px-4 py-10">
+      <h2 className="text-white text-3xl font-bold mb-6 text-center">Create New Blog</h2>
+      <form
+        onSubmit={handleSubmit}
+        className="bg-[#1a1a1a] p-6 rounded-xl shadow-2xl space-y-4 border border-gray-700"
+      >
         <input
           placeholder="Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           required
-          style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px', borderRadius:'5px', boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)' }}
+          className="w-full p-3 rounded-md bg-gray-900 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <input
           placeholder="Author"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
           required
-          style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px', borderRadius:'5px', boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)' }}
+          className="w-full p-3 rounded-md bg-gray-900 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <textarea
           placeholder="Content"
           value={content}
           onChange={(e) => setContent(e.target.value)}
           required
-          rows={5}
-          style={{ display: 'block', width: '100%', marginBottom: '10px', padding: '8px', borderRadius:'5px', boxShadow: '0 8px 24px rgba(0, 0, 0, 0.12)'}}
+          rows={6}
+          className="w-full p-3 rounded-md bg-gray-900 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
         />
-        <button type="submit" disabled={submitting} style={{color:'#0000ff', backgroundColor:'#000000', font:'60px', fontFamily:'sans-serif', height:'30px', width:'120px', borderRadius:'4px'}}>
+        <button
+          type="submit"
+          disabled={submitting}
+          className={`w-full py-3 rounded-md text-white font-semibold transition-all duration-200 ${
+            submitting
+              ? 'bg-gray-600 cursor-not-allowed'
+              : 'bg-blue-600 hover:bg-blue-700'
+          }`}
+        >
           {submitting ? 'Submitting...' : 'Create Blog'}
         </button>
       </form>
     </div>
   );
 }
-
